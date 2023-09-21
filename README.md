@@ -5,8 +5,11 @@
 This project is going to use semantic versioning for its tagging.
 [semver.org](https://semver.org/)
 
+<<<<<<< HEAD
 _created branch from issue directly_
 
+=======
+>>>>>>> 1_semantic_versioning
 The general format:
 
  **MAJOR.MINOR.PATCH**, eg. `1.0.1`
@@ -16,4 +19,7 @@ The general format:
 - **PATCH** version when you make backward compatible bug fixes
 
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1_semantic_versioning
