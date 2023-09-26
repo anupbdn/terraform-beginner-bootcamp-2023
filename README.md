@@ -199,6 +199,9 @@ The Terraform command `terraform plan` creates an execution plan, which lets you
 
 The Terraform command `terraform apply` executes the actions proposed in a Terraform plan.When you run this command it will prompts you to approve `yes or no` before execution . You can bypass this prompt by auto approving using the command `terraform apply --auto-approve` . Refer [documentation](https://developer.hashicorp.com/terraform/cli/commands/apply)
 
+#### Terraform Destroy
+
+The Terraform command `terraform destroy` destroys/ deletes resources created using `terraform apply` previously.
 
 ### Terraform Lock Files
 
