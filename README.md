@@ -172,3 +172,47 @@ If the authentication is successful we will get below output:
     "Arn": "arn:aws:iam::123456789012:user/terraform_bootcamp"
 }
 ```
+
+## Terraform Basics
+
+### Terraform Registry
+
+Terraform sources their providers and modules from the terraform registry. Always make sure that we refer documentation of providers which is located at [registry.terraform.io](https://registry.terraform.io/)
+
+- **Providers** are a logical abstraction of an upstream API. They are responsible for understanding API interactions and exposing resources.
+- **Modules** are self-contained packages of Terraform configurations that are managed as a group.
+[Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs)
+
+### Terraform Console
+
+We can see a list of all the terraform commands by simply typing `terraform`
+
+#### Terraform Init
+
+The Terraform command `terraform init` initializes a working directory containing Terraform configuration files. This is the first command that should be run after writing a new Terraform configuration or cloning an existing one from version control.
+
+#### Terraform Plan
+
+The Terraform command `terraform plan` creates an execution plan, which lets you preview the changes that Terraform plans to make to your infrastructure. Refer [documentation](https://developer.hashicorp.com/terraform/cli/commands/plan)
+
+#### Terraform Apply
+
+The Terraform command `terraform apply` executes the actions proposed in a Terraform plan.When you run this command it will prompts you to approve `yes or no` before execution . You can bypass this prompt by auto approving using the command `terraform apply --auto-approve` . Refer [documentation](https://developer.hashicorp.com/terraform/cli/commands/apply)
+
+
+### Terraform Lock Files
+
+A Terraform configurations may refer to two kind of external dependencies Providers and Modules.Terraform must determine which versions of those dependencies are potentially compatible with the Project.
+`.terraform.lock.hcl` contains the locked versioning for the providers or modules that should be used.Hence Terraform lock file **should be committed** to your version control system.
+
+### Terraform State Files
+
+Terraform stores information about your infrastructure in a state file. This state file keeps track of resources created by your configuration and maps them to real-world resources.
+
+`terraform.tfstate`  file is used to store all the infrastructure details.This file **should not be committed** in your Version Control System. This can contain sensitive data.
+
+`terraform.tfstate.backup` is the previous version of terraform state.
+
+### Terraform Directory
+
+`.terraform` directory contains binaries of terraform providers.
