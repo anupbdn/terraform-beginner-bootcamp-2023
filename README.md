@@ -199,6 +199,9 @@ The Terraform command `terraform plan` creates an execution plan, which lets you
 
 The Terraform command `terraform apply` executes the actions proposed in a Terraform plan.When you run this command it will prompts you to approve `yes or no` before execution . You can bypass this prompt by auto approving using the command `terraform apply --auto-approve` . Refer [documentation](https://developer.hashicorp.com/terraform/cli/commands/apply)
 
+#### Terraform Destroy
+
+The Terraform command `terraform destroy` destroys/ deletes resources created using `terraform apply` previously.
 
 ### Terraform Lock Files
 
@@ -216,3 +219,7 @@ Terraform stores information about your infrastructure in a state file. This sta
 ### Terraform Directory
 
 `.terraform` directory contains binaries of terraform providers.
+
+### AWS S3 bucket Naming
+
+AWS has naming rules for a S3 bucket , Be careful while using any random modules to create a S3 bucket name as AWS rules should be followed or else you will get error when you do terraform apply.
