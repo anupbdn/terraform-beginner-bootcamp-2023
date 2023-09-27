@@ -223,3 +223,21 @@ Terraform stores information about your infrastructure in a state file. This sta
 ### AWS S3 bucket Naming
 
 AWS has naming rules for a S3 bucket , Be careful while using any random modules to create a S3 bucket name as AWS rules should be followed or else you will get error when you do terraform apply.
+
+### Issues with Terraform login with Gitpod
+
+Inorder to use **Terraform Cloud** as your place to store your terraform state file , we have to first authenticate our terminal to terraform cloud. That can be done from the terminal with 
+command `terraform login`
+
+Terraform will ask an API token to be created and stored at `/home/gitpod/.terraform.d/credentials.tfrc.json`
+
+Manually create or enter the API token when prompted as below :
+
+```json
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "MY TOKEN"
+    }
+  }
+```

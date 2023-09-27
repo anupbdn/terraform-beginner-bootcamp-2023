@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "anupbdn"
+
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
   required_providers {
     random = {
       source = "hashicorp/random"
@@ -6,15 +13,13 @@ terraform {
     }
     aws = {
       source = "hashicorp/aws"
-      version = "5.17.0"
+      version = "5.18.1"
     }
   }
 }
 
 
-provider "aws" {
-  # Configuration options
-}
+provider "aws" { }
 
 provider "random" {
   # Configuration options
