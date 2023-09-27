@@ -241,3 +241,4 @@ Manually create or enter the API token when prompted as below :
     }
   }
 ```
+Bash script [./bin/generate_tfrc_credentials](./bin/generate_tfrc_credentials) automates the json format and place it in the required folder `/home/gitpod/.terraform.d/credentials.tfrc.json`
