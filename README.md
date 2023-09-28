@@ -1,5 +1,41 @@
 # Terraform Beginner Bootcamp 2023
 
+## Table of Contents
+
+- [Semantic Versioning](#semantic-versioning)
+- [Install Terraform CLI](#install-terraform-cli)
+    - [consideration for linux distribution](#consideration-for-linux-distribution)
+    - [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
+    - [Shebang Considerations](#shebang-considerations)
+    - [Execution Considerations](#execution-considerations)
+    - [Linux File Permission Considerations](#linux-file-permission-considerations)
+    - [Github Lifecycle](#github-lifecycle-before-init-command)
+    - [Working with Env Vars](#working-with-env-vars)
+    - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
+    - [Printing Vars](#printing-vars)
+       - [Scoping of Env Vars](#scoping-of-env-vars)
+       - [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
+- [AWS CLI Installation](#aws-cli-installation)
+- [Terraform Basics](#terraform-basics)
+    - [Terraform Registry](#terraform-registry)
+    - [Terraform Console](#terraform-console)
+      - [Terraform Init](#terraform-init)
+      - [Terraform Plan](#terraform-plan)
+      - [Terraform Apply](#terraform-apply)
+      - [Terraform Destroy](#terraform-destroy)
+    - [Terraform Lock Files](#terraform-lock-files)
+    - [Terraform State Files](#terraform-state-files)
+    - [Terraform Directory](#terraform-directory)
+- [AWS S3 bucket Naming](#aws-s3-bucket-naming)
+- [Issues with Terraform login](#issues-with-terraform-login-with-gitpod)
+
+
+
+
+
+
+
+
 ## Semantic Versioning
 
 This project is going to use semantic versioning for its tagging.
@@ -16,7 +52,7 @@ The general format:
 - **MINOR** version when you add functionality in a backward compatible manner
 - **PATCH** version when you make backward compatible bug fixes
 
-### Install Terraform CLI
+## Install Terraform CLI
 The Terraform  CLI installation can change with new versions due to this make sure we always refer the official documentation for the latest installation steps.
 
 - [Terraform Installation](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
@@ -142,7 +178,7 @@ All future workspaces launched will set the env vars for all bash terminals open
 
 You can also set en vars in the `.gitpod.yml` but this can only contain non-sensitive env vars.
 
-### AWS CLI Installation
+## AWS CLI Installation
 
 AWS cli is installed using bash script [./bin/install_aws_cli](./bin/install_aws_cli)
 
