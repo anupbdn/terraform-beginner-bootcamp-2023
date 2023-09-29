@@ -5,7 +5,8 @@
 Our root module structure consists of following items:
 
 ```
-- PROJECT_ROOT
+  PROJECT_ROOT
+  | 
   |- main.tf          # every terraform content
   |- variables.tf     # stores the structure of input variables
   |- terraform.tfvars # the data of variables we want to load into our terraform project
