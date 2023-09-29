@@ -1,11 +1,11 @@
 terraform {
-  cloud {
-    organization = "anupbdn"
+  # cloud {
+  #   organization = "anupbdn"
 
-    workspaces {
-      name = "terra-house-1"
-    }
-  }
+  #   workspaces {
+  #     name = "terra-house-1"
+  #   }
+  # }
   required_providers {
     random = {
       source = "hashicorp/random"
