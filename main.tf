@@ -27,23 +27,28 @@
 #
 ##https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string
 #
-resource "random_string" "bucket_name" {
-  length           = 32
-  special          = false
-  override_special = ""
-  lower            = true
-  upper            = false
-}
+# resource "random_string" "bucket_name" {
+#   length           = 32
+#   special          = false
+#   override_special = ""
+#   lower            = true
+#   upper            = false
+# }
 
 
 
 #https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html
 
-resource "aws_s3_bucket" "example" {
-  bucket = random_string.bucket_name.result
+resource "aws_s3_bucket" "website_bucket" {
+  bucket = var.bucket_name
   
   tags = {
     UserUuid = var.user_uuid   
   }
 }
+
+# import {
+#   to = aws_s3_bucket.bucket
+#   id = "dd5q15upt905kqoarzp9v0mgx95xwsyi"
+# }
 
