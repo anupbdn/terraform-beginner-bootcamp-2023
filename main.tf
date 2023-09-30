@@ -39,16 +39,9 @@
 
 #https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html
 
-resource "aws_s3_bucket" "website_bucket" {
-  bucket = var.bucket_name
-  
-  tags = {
-    UserUuid = var.user_uuid   
-  }
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+  user_uuid = var.user_uuid
+  bucket_name = var.bucket_name
 }
-
-# import {
-#   to = aws_s3_bucket.bucket
-#   id = "dd5q15upt905kqoarzp9v0mgx95xwsyi"
-# }
 

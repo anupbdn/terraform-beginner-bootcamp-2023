@@ -74,4 +74,34 @@ Terraform maintains `terraform.tfstate` as its source of truth , Hence state fil
 
 If an engineer Delete or Modify any terraform created resource through clickops by mistake or for any need. This can be fixed / recreated by running the `terraform apply` again . This is possible because terraform always refers state file and it fixes any configuration drift happened.
 
+## Terraform Modules
 
+### Terraform Module Structure
+
+It is recommended to place modules in a `modules` directory when developing modules locally
+
+### Module Sources
+
+Using the source we can import the module from various places eg:
+- locally
+- Github
+- Terraform registry
+
+```tf
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+}
+```
+
+### Passing Input Variables
+
+We can pass input variables to the module.All the variables should be declared in its own variable.tf (module path)
+
+```tf
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+  user_uuid = var.user_uuid
+  bucket_name = var.bucket_name
+}
+```
+[Terraform Module Documentation](https://developer.hashicorp.com/terraform/language/modules/sources#local-paths)
