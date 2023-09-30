@@ -67,6 +67,7 @@ Terraform maintains `terraform.tfstate` as its source of truth , Hence state fil
 `terraform import aws_s3_bucket.bucket bucket-name`
 
 [Terrafom Import](https://developer.hashicorp.com/terraform/cli/import)
+
 [S3 Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
 
 #### Fix Manual Configuration
