@@ -105,3 +105,37 @@ module "terrahouse_aws" {
 }
 ```
 [Terraform Module Documentation](https://developer.hashicorp.com/terraform/language/modules/sources#local-paths)
+
+## Working with Files in Terraform
+
+### Fileexists function 
+
+This is a built in function of Terraform that checks whether a file exists or not . It is used for validation as below :
+
+```tf
+validation {
+    condition     = fileexists(var.error_html_filepath)
+    error_message = "The provided path for error.html does not exist."
+  }
+```
+
+### Filemd5
+
+This is used to track any file change and terraform know while doing a plan otherwise file content change cannot be verified by Terraform .
+
+{filemd5 documentation}(https://developer.hashicorp.com/terraform/language/functions/filemd5)
+
+### Path Variable
+
+Terraform provides few path variables to handle filesystem . Variable `path` allows us to reference local path of modules:
+
+- path.module - It is the filesystem path of the module where the expression is placed
+- path.root - It is the filesystem path of the root module of the configuration
+
+```tf
+resource "aws_s3_object" "error_html" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "error.html"
+  source = "${path.root}/public/error.html"
+}
+```

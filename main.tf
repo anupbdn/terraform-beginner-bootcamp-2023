@@ -17,24 +17,6 @@
 #    }
 #  }
 #}
-#
-#
-#provider "aws" { }
-#
-#provider "random" {
-#  # Configuration options
-#}
-#
-##https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string
-#
-# resource "random_string" "bucket_name" {
-#   length           = 32
-#   special          = false
-#   override_special = ""
-#   lower            = true
-#   upper            = false
-# }
-
 
 
 #https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html
@@ -43,5 +25,7 @@ module "terrahouse_aws" {
   source = "./modules/terrahouse_aws"
   user_uuid = var.user_uuid
   bucket_name = var.bucket_name
+  index_html_filepath = var.index_html_filepath
+  error_html_filepath = var.error_html_filepath
 }
 
