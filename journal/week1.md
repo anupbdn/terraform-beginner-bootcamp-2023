@@ -173,3 +173,13 @@ output "account_id" {
 We use jsonencode to encode a given value to a string using JSON syntax.
 
 [jsonencode documentation](https://developer.hashicorp.com/terraform/language/functions/jsonencode)
+
+### Changing the Lifecylce of Resources
+
+[Meta Arguments of Lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
+
+### Terraform Data
+
+The terraform_data resource is useful for storing values which need to follow a manage resource lifecycle, and for triggering provisioners when there is no other logical managed resource in which to place them.
+
+[terraform_data resource](https://developer.hashicorp.com/terraform/language/resources/terraform-data)
