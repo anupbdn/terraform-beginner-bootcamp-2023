@@ -139,3 +139,37 @@ resource "aws_s3_object" "error_html" {
   source = "${path.root}/public/error.html"
 }
 ```
+
+### Terraform Locals
+
+Local values can be helpful to avoid repeating the same values or expressions multiple times in a configuration.
+
+```tf
+locals {
+  s3_origin_id = "myS3Origin"
+}
+```
+
+[Local Variable](https://developer.hashicorp.com/terraform/language/values/locals)
+
+### Terraform Data Sources
+
+Data sources allow Terraform to use information defined outside of Terraform, defined by another separate Terraform configuration, or modified by functions.
+
+For example we can get aws account id using below data resource 
+
+```tf
+data "aws_caller_identity" "current" {}
+
+output "account_id" {
+  value = data.aws_caller_identity.current.account_id
+}
+```
+
+[Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
+
+### Working with JSON
+
+We use jsonencode to encode a given value to a string using JSON syntax.
+
+[jsonencode documentation](https://developer.hashicorp.com/terraform/language/functions/jsonencode)
