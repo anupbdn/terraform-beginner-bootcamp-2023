@@ -183,3 +183,33 @@ We use jsonencode to encode a given value to a string using JSON syntax.
 The terraform_data resource is useful for storing values which need to follow a manage resource lifecycle, and for triggering provisioners when there is no other logical managed resource in which to place them.
 
 [terraform_data resource](https://developer.hashicorp.com/terraform/language/resources/terraform-data)
+
+### Provisioners
+
+Provisioners are a way to run a command just like you run on a machine . Declaring a provisioner will enable you to run a command like in a server . Terraform consider this as a last resort
+since there could be something which cannot be done using terraform. eg. We can run a AWS CLI command using provisioner.
+Tools like Ansible is better fit to do these kind of tasks.
+
+### Local-exec
+
+This will execute command from the machine where you are running Terraform eg :
+
+[terraform heredoc](https://developer.hashicorp.com/terraform/language/expressions/strings#:~:text=Heredoc-,Strings,-Terraform%20also%20supports)
+
+```tf
+provisioner "local-exec" {
+    command = <<COMMAND
+aws cloudfront create-invalidation \
+--distribution-id ${aws_cloudfront_distribution.s3_distribution.id} \
+--paths '/*'
+    COMMAND    
+  }
+```
+
+[local-exec](https://developer.hashicorp.com/terraform/language/resources/provisioners/local-exec)
+
+### Remote-exec
+
+This will execute command from the target machine .
+
+[remote-exec](https://developer.hashicorp.com/terraform/language/resources/provisioners/remote-exec)

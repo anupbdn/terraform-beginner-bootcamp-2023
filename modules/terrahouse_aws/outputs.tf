@@ -10,6 +10,6 @@ output "cdn_distribution" {
     value = aws_cloudfront_distribution.s3_distribution.id  
 }
 
-output "cdn_domain_name" {
+output "cloudfront_url" {
   value = aws_cloudfront_distribution.s3_distribution.domain_name
 }
