@@ -213,3 +213,9 @@ aws cloudfront create-invalidation \
 This will execute command from the target machine .
 
 [remote-exec](https://developer.hashicorp.com/terraform/language/resources/provisioners/remote-exec)
+
+### For Each Expressions
+
+Just like any other programming language `for_each` allow us to iterate through multiple objects (for loop in python)
+
+[for_each](https://developer.hashicorp.com/terraform/language/meta-arguments/for_each)
