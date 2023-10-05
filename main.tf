@@ -1,11 +1,11 @@
-#terraform {
-#  cloud {
-#    organization = "anupbdn"
-#
-#    workspaces {
-#      name = "terra-house-1"
-#    }
-#  }
+terraform {
+  cloud {
+    organization = "anupbdn"
+
+    workspaces {
+      name = "terra-cloud"
+    }
+  }
 #  required_providers {
 #    random = {
 #      source = "hashicorp/random"
@@ -16,7 +16,7 @@
 #      version = "5.18.1"
 #    }
 #  }
-#}
+}
 
 
 #https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html
