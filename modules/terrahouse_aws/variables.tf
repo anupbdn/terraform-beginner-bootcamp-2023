@@ -25,18 +25,18 @@ variable "index_html_filepath"{
   description = "path where index.html file is placed"
   type = string
 
-  validation {
-    condition     = fileexists(var.index_html_filepath)
-    error_message = "The provided path for index.html does not exist."
-  }
+  # validation {
+  #   condition     = fileexists(var.index_html_filepath)
+  #   error_message = "The provided path for index.html does not exist."
+  # }
 }
 
 variable "error_html_filepath"{
   description = "path where error.html file is placed"
   type = string
 
-  validation {
-    condition     = fileexists(var.error_html_filepath)
-    error_message = "The provided path for error.html does not exist."
-  }
+  # validation {
+  #   condition     = fileexists(var.error_html_filepath)
+  #   error_message = "The provided path for error.html does not exist."
+  # }
  }
